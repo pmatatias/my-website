@@ -1,12 +1,15 @@
 name: Build and Release APK
-on: push
+on:
+  push:
+    branches:
+    - master
 jobs:
     hosting:
       name: Deploy Website
       runs-on: ubuntu-latest
       steps:
         # Checkout Repository
-        - uses: actions/checkout@v1
+        - uses: actions/checkout@master
 
         # Install Flutter command
         - uses: subosito/flutter-action@v1
