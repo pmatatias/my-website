@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/loader/loader.dart';
+import 'package:pmatatias/loader/loader.dart';
 
 void main() {
   runApp(const MyApp());

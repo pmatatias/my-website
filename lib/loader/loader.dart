@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/loader/paint_arc.dart';
+import 'package:pmatatias/loader/paint_arc.dart';
 
 class LoaderWidget extends StatefulWidget {
   final VoidCallback? ontap;
