@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/utils/appstate.dart';
+import 'package:pmatatias/utils/appstate.dart';
 import 'package:provider/provider.dart';
 
 class About extends StatelessWidget {

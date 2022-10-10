@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/screen/about.dart';
-import 'package:portfolio_web/screen/home.dart';
-import 'package:portfolio_web/utils/appstate.dart';
+import 'package:pmatatias/screen/about.dart';
+import 'package:pmatatias/screen/home.dart';
+import 'package:pmatatias/utils/appstate.dart';
 import 'package:provider/provider.dart';
 
 class BaseLayout extends StatelessWidget {
