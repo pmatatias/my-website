@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'package:pmatatias/loader/loader.dart';
+import 'package:pmatatias/base_layout.dart';
+import 'package:pmatatias/utils/appstate.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,14 +10,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(
-      title: 'matatias situmorang',
-      theme: ThemeData(primarySwatch: Colors.lightBlue),
-      home: const LoaderWidget(),
+    return ChangeNotifierProvider(
+      create: (context) => AppState(),
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'matatias situmorang',
+          theme: ThemeData(primarySwatch: Colors.lightBlue),
+          home: const BaseLayout()),
     );
   }
 }

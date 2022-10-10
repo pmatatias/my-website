@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logo_n_spinner/logo_n_spinner.dart';
 import 'package:pmatatias/utils/appstate.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +30,7 @@ class About extends StatelessWidget {
               ))
         ],
       ),
-      body: const Center(child: Text("about")),
+      body: const Center(child: LogoandSpinner(imageAssets: 'assets/me.png')),
     );
   }
 }
