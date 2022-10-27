@@ -1,5 +1,5 @@
 name: pmatatias
-description: A new Flutter project.
+description: 
 
 publish_to: 'none' 
 
@@ -18,6 +18,8 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  flutter_web_plugins:
     sdk: flutter
 
 
