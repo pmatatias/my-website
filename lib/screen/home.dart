@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/utils/appstate.dart';
-import 'package:provider/provider.dart';
+import 'package:logo_n_spinner/logo_n_spinner.dart';
+import 'package:pmatatias/component/typing_animation.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -12,49 +12,42 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  Future<String> dots() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return '';
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title), actions: [
-        TextButton(
-          onPressed: () {
-            final state = context.read<AppState>();
-            state.setActivePage = 1;
-          },
-          child: const Text(
-            "About",
-            style: TextStyle(
-              color: Colors.red,
-            ),
-          ),
-        )
-      ]),
+      // appBar: AppBar(title: Text(widget.title), actions: const []),
+      backgroundColor: const Color(0xFF202124),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            const LogoandSpinner(imageAssets: 'assets/me.png'),
+            const TypingAnimation(
+              text: 'Under Development',
+              duration: 3000,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            const SizedBox(
+              width: 4,
             ),
+            FutureBuilder(
+                future: dots(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return const TypingAnimation(
+                      text: '-_-_-_-_-_-_-_-_-_-_-_-_-_',
+                      duration: 4000,
+                      repeat: true,
+                    );
+                  }
+                  return const SizedBox();
+                }),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }

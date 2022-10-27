@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
-
-import 'package:pmatatias/loader/loader.dart';
+import 'package:pmatatias/base_layout.dart';
+import 'package:pmatatias/utils/appstate.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(
-      title: 'matatias situmorang',
-      theme: ThemeData(primarySwatch: Colors.lightBlue),
-      home: const LoaderWidget(),
+    return ChangeNotifierProvider(
+      create: (context) => AppState(),
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'matatias situmorang',
+          theme: ThemeData(primarySwatch: Colors.lightBlue),
+          home: const BaseLayout()),
     );
   }
 }
