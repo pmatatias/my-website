@@ -45,7 +45,7 @@ extension Responsive on BuildContext {
     T? lg,
     T? xl,
   }) {
-    const wd = 1280;
+    final wd = MediaQuery.of(this).size.width;
     return wd >= 1280
         ? (xl ?? lg ?? md ?? sm ?? defaultVal)
         : wd >= 1024
